@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.ant-card-head{
+  background: #001529!important;
+  color: white;
+}
+.body-card{
+  box-shadow: 1px 1px 1px #d6d4d4;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  #height: 100%;
+}
