@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from 'src/app/shared/shared/shared.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeComponent } from './welcome.component';
@@ -17,9 +17,6 @@ import {NzAvatarModule} from "ng-zorro-antd/avatar";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {NzPageHeaderModule} from "ng-zorro-antd/page-header";
 import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
-
-
-
 
 @NgModule({
   imports: [
