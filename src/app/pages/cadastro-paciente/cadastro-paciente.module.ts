@@ -15,10 +15,12 @@ import {NzCardModule} from "ng-zorro-antd/card";
 import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
 import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzTabsModule} from "ng-zorro-antd/tabs";
+import {InformacaoComponent} from "./informacao/informacao.component";
+import {EnderecoComponent} from "./endereco/endereco.component";
 
 
 @NgModule({
-  declarations: [CadastroPacienteComponent],
+  declarations: [CadastroPacienteComponent, InformacaoComponent, EnderecoComponent],
   imports: [
     CommonModule,
     CadastroPacienteRoutingModule,

@@ -14,102 +14,16 @@
   <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
     <div nz-col [nzSpan]="24">
       <nz-tabset nzType="card">
-        <nz-tab [nzTitle]="'Informações'">
-
-        </nz-tab>
-        <nz-tab [nzTitle]="'Endereço'">Content of Tab Pane2</nz-tab>
-        <nz-tab [nzTitle]="'Contato'">Content of Tab Pane3</nz-tab>
+        <form>
+          <nz-tab [nzTitle]="'Informações'">
+            <app-informacao></app-informacao>
+          </nz-tab>
+          <nz-tab [nzTitle]="'Endereço'">
+            <app-endereco></app-endereco>
+          </nz-tab>
+          <nz-tab [nzTitle]="'Foto'">Content of Tab Pane3</nz-tab>
+        </form>
       </nz-tabset>
-      <!--<div style="background: #ECECEC;">
-          <form nz-form [nzLayout]="'inline'"></form>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="24">
-            <nz-card nzTitle="Dados pessoais">
-              <div nz-row [nzGutter]="8">
-                <div nz-col [nzSpan]="24">
-                  <form nz-form [nzLayout]="'inline'">
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <input
-                          nz-input
-                          placeholder="Nome"
-                        />
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <input  nz-input type="cpf" placeholder="cpf" />
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control>
-                        <nz-input-group>
-                          <input  nz-input type="text" placeholder="e-mail" />
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <nz-date-picker nzPlaceHolder="Data de nascimento" nzFormat="dd/MM/yyyy"></nz-date-picker>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <nz-select class="nz-select" ngModel="lucy">
-                            <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
-                            <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
-                            <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
-                          </nz-select>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                  </form>
-                </div>
-              </div>
-              <div style="margin-top: 5px" nz-row [nzGutter]="8">
-                <div nz-col [nzSpan]="24">
-                  <form nz-form [nzLayout]="'inline'">
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <input  nz-input type="cpf" placeholder="cpf" />
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control>
-                        <nz-input-group>
-                          <input  nz-input type="text" placeholder="e-mail" />
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <nz-date-picker nzPlaceHolder="Data de nascimento" nzFormat="dd/MM/yyyy"></nz-date-picker>
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                    <nz-form-item>
-                      <nz-form-control nzErrorTip="Campo obrigatório">
-                        <nz-input-group>
-                          <input  nz-input type="password" placeholder="Password" />
-                        </nz-input-group>
-                      </nz-form-control>
-                    </nz-form-item>
-                  </form>
-                </div>
-              </div>
-            </nz-card>
-          </div>
-        </div>
-      </div>-->
-
     </div>
   </div>
 </div>
