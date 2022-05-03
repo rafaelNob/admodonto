@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CadastroProfissionalModule} from "./pages/cadastro-profissional/cadastro-profissional.module";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -7,6 +8,9 @@ const routes: Routes = [
       .then(m => m.WelcomeModule) },
   { path: 'cadastro-paciente', loadChildren: () => import('./pages/cadastro-paciente/cadastro-paciente.module')
       .then(m => m.CadastroPacienteModule)
+  },
+  { path: 'cadastro-profissional', loadChildren: () => import('./pages/cadastro-profissional/cadastro-profissional.module')
+      .then(m => m.CadastroProfissionalModule)
   }
 ];
 
