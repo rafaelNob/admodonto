@@ -5,16 +5,36 @@
         <nz-page-header>
           <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="user"></nz-avatar>
           <nz-page-header-title>ANAMNESE</nz-page-header-title>
-          <nz-page-header-extra>
-            <button class="btn-primary-success" nz-button nzType="primary">Salvar</button>
-          </nz-page-header-extra>
+           <nz-page-header-extra *ngIf="!isUsuario">
+             <button  nz-button nzType="primary">Salvar</button>
+           </nz-page-header-extra>
           <nz-page-header-content>
-            <nz-descriptions nzSize="small" [nzColumn]="2">
+            <nz-descriptions *ngIf="!isUsuario" nzSize="small" [nzColumn]="2">
               <nz-descriptions-item nzTitle="Paciente" [nzSpan]="1">RAFAEL NOBERTO DE FRANÇA</nz-descriptions-item>
               <nz-descriptions-item nzTitle="Documento" [nzSpan]="1"><a>33804632807</a></nz-descriptions-item>
               <nz-descriptions-item nzTitle="Tipo" [nzSpan]="1">Convênio</nz-descriptions-item>
               <nz-descriptions-item nzTitle="Plano" [nzSpan]="1">Interodônto</nz-descriptions-item>
             </nz-descriptions>
+            <nz-row *ngIf="isUsuario" nzType="flex">
+              <div nz-row [nzGutter]="8">
+                <div nz-col [nzSpan]="24">
+                  <form nz-form [nzLayout]="'inline'">
+                    <nz-form-item>
+                      <nz-form-control nzErrorTip="Please input your username!">
+                        <nz-input-group>
+                          <input  nz-input placeholder="cpf" />
+                        </nz-input-group>
+                      </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                      <nz-form-control>
+                        <button (click)="teste()" nz-button nzType="primary" nzShape="circle"><i nz-icon nzType="search"></i></button>
+                      </nz-form-control>
+                    </nz-form-item>
+                  </form>
+                </div>
+              </div>
+            </nz-row>
           </nz-page-header-content>
         </nz-page-header>
       </div>
@@ -22,320 +42,5 @@
   </div>
 </div>
 
-<div style="background: #ECECEC;">
-  <div nz-row [nzGutter]="8">
-    <div nz-col [nzSpan]="24">
-      <nz-card nzTitle="Ficha de Avaliação Orofacial">
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Atualmente esta em tratamento médico?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Qual tratamento médico?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Faz uso de algum medicamento?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Ja aprensentou alguma reação alérgica?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Qual a reação?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Ja tomou alguma anestesia local(Dentista)?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Ja aprensentou alguma reação anormal a essa anestesia?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Ja teve algum câncer?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Possui algum problema de coração?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                  nz-input
-                  placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Quanto constuma ser sua pressão arterial?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                  nz-input
-                  placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Tem muita exposição ao sol?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Obs"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Faz algum tipo de cuidado estético?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                  nz-input
-                  placeholder="Qual?"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Ultiliza ou já ultilizou algum ácido na pele?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                       nz-input
-                       placeholder="Obs"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">É diabético?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <input
-                  nz-input
-                  placeholder="tipo"
-                />
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="12">
-            <nz-form-item>
-              <nz-form-control class="margin-l-15" nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Está controlada?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Atividade física?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control class="margin-l-15" nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Bebida alcoólica?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-          <div nz-col [nzSpan]="8">
-            <nz-form-item>
-              <nz-form-control class="margin-l-15" nzErrorTip="Campo obrigatório">
-                <span style="display: block; font-weight: 500 ">Cirurgia?</span>
-                <nz-radio-group [(ngModel)]="radioValue">
-                  <label nz-radio nzValue="S">Sim</label>
-                  <label nz-radio nzValue="N">Não</label>
-                </nz-radio-group>
-              </nz-form-control>
-            </nz-form-item>
-          </div>
-        </div>
-        <nz-divider></nz-divider>
-        <div nz-row [nzGutter]="8">
-          <div nz-col [nzSpan]="24">
-            <nz-form-item>
-              <span style="display: block; font-weight: 500 ">Observações:</span>
-              <nz-input-group [nzSuffix]="textAreaClearTpl" class="ant-input-affix-wrapper-textarea-with-clear-btn">
-                <textarea nz-input [(ngModel)]="textValue" placeholder="Alguma observação?"></textarea>
-              </nz-input-group>
-              <ng-template #textAreaClearTpl>
-                <i
-                  nz-icon
-                  class="ant-input-clear-icon"
-                  nzTheme="fill"
-                  nzType="close-circle"
-                  *ngIf="textValue"
-                  (click)="textValue = null"
-                ></i>
-              </ng-template>
-            </nz-form-item>
-          </div>
-        </div>
-      </nz-card>
-    </div>
-  </div>
-</div>
+<app-ficha-avaliacao-orofacial *ngIf="!isUsuario"></app-ficha-avaliacao-orofacial>
 
