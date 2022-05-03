@@ -17,10 +17,12 @@ import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzTabsModule} from "ng-zorro-antd/tabs";
 import {InformacaoComponent} from "./informacao/informacao.component";
 import {EnderecoComponent} from "./endereco/endereco.component";
+import {ImagemComponent} from "./imagem/imagem.component";
+import {NzUploadModule} from "ng-zorro-antd/upload";
 
 
 @NgModule({
-  declarations: [CadastroPacienteComponent, InformacaoComponent, EnderecoComponent],
+  declarations: [CadastroPacienteComponent, InformacaoComponent, EnderecoComponent, ImagemComponent],
   imports: [
     CommonModule,
     CadastroPacienteRoutingModule,
@@ -36,7 +38,8 @@ import {EnderecoComponent} from "./endereco/endereco.component";
     NzCardModule,
     NzDatePickerModule,
     NzSelectModule,
-    NzTabsModule
+    NzTabsModule,
+    NzUploadModule
   ],
   exports: [CadastroPacienteComponent]
 })

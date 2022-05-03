@@ -17,3 +17,22 @@
   color: white;
   background: #001529;
 }
+
+.btn-primary-success  {
+  color: #fff;
+  border: 1px solid #0b8235;
+  background: #0b8235;
+  text-shadow: 0 -1px 0 rgb(0 0 0);
+  box-shadow: none;
+  padding: 6px 21px;
+  border-radius: 2px;
+  transition: 0s;
+}
+
+.btn-primary-success:hover  {
+  color: #fff;
+  cursor: pointer;
+  background: #47805a;
+  transition: 1s;
+}
+

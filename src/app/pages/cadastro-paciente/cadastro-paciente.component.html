@@ -5,6 +5,12 @@
         <nz-page-header>
           <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="home"></nz-avatar>
           <nz-page-header-title>CADASTRO PACIENTE</nz-page-header-title>
+          <nz-page-header-extra>
+            <button class="btn-primary-success" nz-button nzType="primary">
+              <i nz-icon nzType="search"></i>
+              Search
+            </button>
+          </nz-page-header-extra>
         </nz-page-header>
       </div>
     </div>
@@ -21,7 +27,9 @@
           <nz-tab [nzTitle]="'Endereço'">
             <app-endereco></app-endereco>
           </nz-tab>
-          <nz-tab [nzTitle]="'Foto'">Content of Tab Pane3</nz-tab>
+          <nz-tab [nzTitle]="'Foto'">
+          <app-imagem></app-imagem>
+          </nz-tab>
         </form>
       </nz-tabset>
     </div>
