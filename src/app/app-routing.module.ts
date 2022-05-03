@@ -11,6 +11,9 @@ const routes: Routes = [
   },
   { path: 'cadastro-profissional', loadChildren: () => import('./pages/cadastro-profissional/cadastro-profissional.module')
       .then(m => m.CadastroProfissionalModule)
+  },
+  { path: 'anamnese', loadChildren: () => import('./pages/anamnese/anamnese.module')
+      .then(m => m.AnamneseModule)
   }
 ];
 
