@@ -17,6 +17,7 @@ import {NzPageHeaderModule} from "ng-zorro-antd/page-header";
 import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {NzButtonModule} from "ng-zorro-antd/button";
+import {NzBackTopModule} from "ng-zorro-antd/back-top";
 
 
 registerLocaleData(pt);
@@ -37,7 +38,8 @@ registerLocaleData(pt);
     NzPageHeaderModule,
     NzDescriptionsModule,
     NzGridModule,
-    NzButtonModule
+    NzButtonModule,
+    NzBackTopModule
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }],
   bootstrap: [AppComponent]
