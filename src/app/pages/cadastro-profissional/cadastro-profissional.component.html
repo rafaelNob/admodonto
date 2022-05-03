@@ -4,7 +4,7 @@
       <div>
         <nz-page-header>
           <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="user"></nz-avatar>
-          <nz-page-header-title>CADASTRO PACIENTE</nz-page-header-title>
+          <nz-page-header-title>CADASTRO PROFISSIONAL</nz-page-header-title>
           <nz-page-header-extra>
             <button class="btn-primary-success" nz-button nzType="primary">
               <i nz-icon nzType="search"></i>
@@ -22,10 +22,10 @@
       <nz-tabset nzType="card">
         <form>
           <nz-tab [nzTitle]="'Informações'">
-            <app-informacao [tipoUsuario]="'PACIENTE'"></app-informacao>
+            <app-informacao [tipoUsuario]="'PROFISSIONAL'"></app-informacao>
           </nz-tab>
           <nz-tab [nzTitle]="'Endereço'">
-            <app-endereco></app-endereco>
+          <app-endereco></app-endereco>
           </nz-tab>
           <nz-tab [nzTitle]="'Foto'">
           <app-imagem></app-imagem>

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {CadastroPacienteComponent} from "./cadastro-paciente.component";
-import {CadastroPacienteRoutingModule} from "./cadastro-paciente-routing.module";
 import {NzPageHeaderModule} from "ng-zorro-antd/page-header";
 import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 import {NzGridModule} from "ng-zorro-antd/grid";
@@ -15,15 +13,14 @@ import {NzCardModule} from "ng-zorro-antd/card";
 import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
 import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzTabsModule} from "ng-zorro-antd/tabs";
-import {InformacaoComponent} from "./informacao/informacao.component";
-import {EnderecoComponent} from "./endereco/endereco.component";
-import {ImagemComponent} from "./imagem/imagem.component";
 import {NzUploadModule} from "ng-zorro-antd/upload";
-import {FormsModule} from "@angular/forms";
+import {CadastroProfissionalComponent} from "./cadastro-profissional.component";
+import {CadastroPacienteRoutingModule} from "./cadastro-profissional-routing.module";
+import {CadastroPacienteModule} from "../cadastro-paciente/cadastro-paciente.module";
 
 
 @NgModule({
-  declarations: [CadastroPacienteComponent, InformacaoComponent, EnderecoComponent, ImagemComponent],
+  declarations: [CadastroProfissionalComponent],
   imports: [
     CommonModule,
     CadastroPacienteRoutingModule,
@@ -41,8 +38,8 @@ import {FormsModule} from "@angular/forms";
     NzSelectModule,
     NzTabsModule,
     NzUploadModule,
-    FormsModule
+    CadastroPacienteModule
   ],
-  exports: [CadastroPacienteComponent, EnderecoComponent, InformacaoComponent, ImagemComponent]
+  exports: [CadastroProfissionalComponent]
 })
-export class CadastroPacienteModule { }
+export class CadastroProfissionalModule { }

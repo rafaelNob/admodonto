@@ -2,67 +2,68 @@
   <div nz-row [nzGutter]="8">
     <div nz-col [nzSpan]="24">
       <nz-card nzTitle="Dados pessoais">
-          <div nz-row [nzGutter]="8">
-            <div nz-col [nzSpan]="12">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <input
-                    nz-input
-                    placeholder="Primeiro nome"
-                  />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div nz-col [nzSpan]="12">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <input
-                    nz-input
-                    placeholder="Último nome"
-                  />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Primeiro nome"
+                />
+              </nz-form-control>
+            </nz-form-item>
           </div>
-          <div nz-row [nzGutter]="8">
-            <div nz-col [nzSpan]="4">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <input
-                    nz-input
-                    placeholder="cpf"
-                  />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div nz-col [nzSpan]="4">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <nz-date-picker nzShowToday="false" nzPlaceHolder="Data Nascimento"  style="width: 100%;" nzFormat="dd/MM/yyyy"></nz-date-picker>
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div nz-col [nzSpan]="8">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <input
-                    nz-input
-                    placeholder="e-mail"
-                  />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
-            <div nz-col [nzSpan]="8">
-              <nz-form-item>
-                <nz-form-control nzErrorTip="Campo obrigatório">
-                  <input
-                    nz-input
-                    placeholder="Confirma e-mail"
-                  />
-                </nz-form-control>
-              </nz-form-item>
-            </div>
+          <div nz-col [nzSpan]="12">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Último nome"
+                />
+              </nz-form-control>
+            </nz-form-item>
           </div>
+        </div>
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="4">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="cpf"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="4">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <nz-date-picker nzShowToday="false" nzPlaceHolder="Data Nascimento" style="width: 100%;"
+                                nzFormat="dd/MM/yyyy"></nz-date-picker>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="e-mail"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Confirma e-mail"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
         <div nz-row [nzGutter]="8">
           <div nz-col [nzSpan]="6">
             <nz-form-item>
@@ -74,7 +75,7 @@
               </nz-form-control>
             </nz-form-item>
           </div>
-          <div nz-col [nzSpan]="6">
+          <div *ngIf="tipoUsuario ==='PACIENTE'" nz-col [nzSpan]="6">
             <nz-form-item>
               <nz-input-group>
                 <nz-select nzPlaceHolder="Selecione o Plano" style="width: 100%;" class="nz-select" ngModel="lucy">
@@ -82,6 +83,34 @@
                   <nz-option nzValue="lucy" nzLabel="Interodonto"></nz-option>
                   <nz-option nzValue="disabled" nzLabel="Particular"></nz-option>
                 </nz-select>
+              </nz-input-group>
+            </nz-form-item>
+          </div>
+          <div *ngIf="tipoUsuario ==='PROFISSIONAL'" nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="CRO"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div *ngIf="tipoUsuario ==='PROFISSIONAL'" nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-input-group class="nz-select">
+                <nz-select style="width: 100%;"
+                           [nzMaxTagCount]="3"
+                           [nzMaxTagPlaceholder]="tagPlaceHolder"
+                           nzMode="multiple"
+                           nzPlaceHolder="Especialidades"
+                           [(ngModel)]="listOfSelectedValue"
+                >
+                  <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
+                </nz-select>
+                <ng-template class="nz-select" #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more
+                  selected
+                </ng-template>
               </nz-input-group>
             </nz-form-item>
           </div>
