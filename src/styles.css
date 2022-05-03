@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+.ant-card-head{
+  background: #001529!important;
+  color: white;
+}
+.body-card{
+  box-shadow: 1px 1px 1px #d6d4d4;
+}
+
+.inner-content {
+  padding: 24px;
+  background: #fff;
+  #height: 100%;
+  margin-bottom: 15px;
+}
+
+.icon-style{
+  color: white;
+  background: #001529;
+}
+
+.btn-primary-success  {
+  color: #fff;
+  border: 1px solid #0b8235;
+  background: #0b8235;
+  text-shadow: 0 -1px 0 rgb(0 0 0);
+  box-shadow: none;
+  padding: 6px 21px;
+  border-radius: 2px;
+  transition: 0s;
+}
+
+.btn-primary-success:hover  {
+  color: #fff;
+  cursor: pointer;
+  background: #47805a;
+  transition: 1s;
+}
+

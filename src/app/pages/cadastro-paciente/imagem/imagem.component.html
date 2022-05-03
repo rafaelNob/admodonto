@@ -1,0 +1,22 @@
+<div style="background: #ECECEC;">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Foto">
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="18">
+            <nz-upload
+              nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+              [nzFileList]="fileList"
+              (nzChange)="handleChange($event)"
+            >
+              <button nz-button>
+                <i nz-icon nzType="upload"></i>
+                Upload
+              </button>
+            </nz-upload>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

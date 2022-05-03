@@ -15,13 +15,17 @@
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
+            <a routerLink="/home">Home</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Cadastro" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/cadastro-paciente">Paciente</a>
           </li>
           <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
+            <a>Profissional</a>
           </li>
         </ul>
       </li>
@@ -45,9 +49,9 @@
             ></i>
         </span>
         </div>
-        <div style="width: 167px;position: absolute;top: 0; right: -84px;">
-          <ul nz-menu  nzMode="horizontal">
-            <li  nz-submenu  nzIcon="setting">
+        <div style="position: absolute;top: 0; right: 27px;">
+          <ul nz-menu nzMode="horizontal">
+            <li nz-submenu nzIcon="setting">
               <ul class="ant-menu-sub2">
                 <li nz-menu-item>Meu perfil</li>
                 <li nz-menu-item>Sair</li>
@@ -58,46 +62,8 @@
       </div>
     </nz-header>
     <nz-content>
-      <div class="inner-content-card">
-         <div style="background: #ECECEC;padding: 5px 0">
-      <div nz-row [nzGutter]="8">
-        <div nz-col [nzSpan]="6">
-          <nz-card nzTitle="Pacientes ativos" >
-            <nz-card-meta
-              [nzAvatar]="avatarTemplate"
-              nzTitle="Card title"
-              nzDescription="This is the description"
-            ></nz-card-meta>
-            <nz-statistic [nzValue]="(1949101 | number)!" ></nz-statistic>
-          </nz-card>
-          <ng-template #avatarTemplate>
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
-          </ng-template>
-        </div>
-        <div nz-col [nzSpan]="6">
-          <nz-card nzTitle="Card title">
-            <p>Card content</p>
-          </nz-card>
-        </div>
-        <div nz-col [nzSpan]="6">
-          <nz-card nzTitle="Card title">
-            <p>Card content</p>
-          </nz-card>
-        </div>
-        <div nz-col [nzSpan]="6">
-          <nz-card nzTitle="Card title">
-            <p>Card content</p>
-          </nz-card>
-        </div>
-      </div>
-    </div>
-      </div>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </nz-content>
+    <nz-footer style="text-align: center">Ant Design ©2020 Implement By Angular</nz-footer>
   </nz-layout>
 </nz-layout>

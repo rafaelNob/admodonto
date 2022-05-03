@@ -1,0 +1,75 @@
+<div style="background: #ffffff; width: 100%;margin-bottom: 15px;padding: 24px;">
+  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+    <div nz-col class="gutter-row" [nzSpan]="24">
+      <div class="site-page-header-ghost-wrapper">
+        <nz-page-header>
+          <nz-page-header-title>BEM VINDO</nz-page-header-title>
+          <nz-page-header-subtitle>RAFAEL NOBERTO</nz-page-header-subtitle>
+          <nz-page-header-extra>
+            <button nz-button>Operation</button>
+            <button nz-button>Operation</button>
+            <button nz-button nzType="primary">Primary</button>
+          </nz-page-header-extra>
+          <nz-page-header-content>
+            <nz-descriptions nzSize="small" [nzColumn]="3">
+              <nz-descriptions-item nzTitle="USUÁRIO" [nzSpan]="1">RAFAEL NOBERTO</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Association" [nzSpan]="1"><a>421421</a></nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Creation Time" [nzSpan]="1">2017-01-10</nz-descriptions-item>
+              <nz-descriptions-item nzTitle="Effective Time" [nzSpan]="1">2017-10-10</nz-descriptions-item>
+            </nz-descriptions>
+          </nz-page-header-content>
+        </nz-page-header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="inner-content">
+  <nz-content>
+    <div style="margin-top: 15px" nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+      <div nz-col class="gutter-row" [nzSpan]="24">
+        <div class="inner-box">
+          <div class="inner-content-card">
+            <div style="box-shadow: 1px 1px 1px #d6d4d4;padding: 5px 5px">
+              <div nz-row [nzGutter]="8">
+                <div nz-col [nzSpan]="6">
+                  <nz-card class="body-card" [nzActions]="[actionSetting ]" nzTitle="Pacientes ativos">
+                    <nz-card-meta
+                      [nzAvatar]="avatarTemplate"
+                      nzTitle="Card title"
+                      nzDescription="This is the description"
+                    ></nz-card-meta>
+                    <nz-statistic [nzValue]="(1949101 | number)!"></nz-statistic>
+                  </nz-card>
+                  <ng-template #avatarTemplate>
+                    <i class="trigger"
+                       nz-icon
+                    ></i>
+                  </ng-template>
+                  <ng-template #actionSetting>
+                    <i nz-icon nzType="setting"></i>
+                  </ng-template>
+                </div>
+                <div nz-col [nzSpan]="6">
+                  <nz-card class="body-card" nzTitle="Card title">
+                    <p>Card content</p>
+                  </nz-card>
+                </div>
+                <div nz-col [nzSpan]="6">
+                  <nz-card class="body-card" nzTitle="Card title">
+                    <p>Card content</p>
+                  </nz-card>
+                </div>
+                <div nz-col [nzSpan]="6">
+                  <nz-card class="body-card" nzTitle="Card title">
+                    <p>Card content</p>
+                  </nz-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</div>
+

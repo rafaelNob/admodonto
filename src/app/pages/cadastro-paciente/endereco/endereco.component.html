@@ -1,0 +1,87 @@
+<div style="background: #ECECEC;">
+  <form nz-form></form>
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="24">
+      <nz-card nzTitle="Endereço">
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="18">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Logradouro"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="2">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="N°"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="16">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Complemento"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Bairro"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <nz-select nzPlaceHolder="Selecione um estado" ngModel="lucy">
+                  <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                  <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                  <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <nz-select nzPlaceHolder="Selecione uma cidade" ngModel="lucy">
+                  <nz-option nzValue="jack" nzLabel="Jack"></nz-option>
+                  <nz-option nzValue="lucy" nzLabel="Lucy"></nz-option>
+                  <nz-option nzValue="disabled" nzLabel="Disabled" nzDisabled></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="cep"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
+</div>

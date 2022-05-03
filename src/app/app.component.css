@@ -6,7 +6,7 @@
 }
 
 .app-layout {
-  height: 100vh;
+  height: auto;
 }
 
 .menu-sidebar {
@@ -22,15 +22,6 @@
   font-size: 20px;
   cursor: pointer;
   transition: all .3s,padding 0s;
-}
-
-.header-trigger-2 {
-  height: 64px;
-  padding: 20px 24px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all .3s,padding 0s;
-  float: right;
 }
 
 .trigger:hover {
@@ -82,11 +73,6 @@ nz-content {
   margin: 24px;
 }
 
-.inner-content {
-  padding: 24px;
-  background: #fff;
-  height: 100%;
-}
 
 .inner-content-card {
   padding: 24px;
