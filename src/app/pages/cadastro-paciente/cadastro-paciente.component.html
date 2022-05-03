@@ -3,7 +3,7 @@
     <div nz-col [nzSpan]="24">
       <div>
         <nz-page-header>
-          <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="home"></nz-avatar>
+          <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="user"></nz-avatar>
           <nz-page-header-title>CADASTRO PACIENTE</nz-page-header-title>
           <nz-page-header-extra>
             <button class="btn-primary-success" nz-button nzType="primary">
@@ -22,7 +22,7 @@
       <nz-tabset nzType="card">
         <form>
           <nz-tab [nzTitle]="'Informações'">
-            <app-informacao></app-informacao>
+            <app-informacao [tipoUsuario]="'PACIENTE'"></app-informacao>
           </nz-tab>
           <nz-tab [nzTitle]="'Endereço'">
             <app-endereco></app-endereco>

@@ -19,6 +19,7 @@ import {InformacaoComponent} from "./informacao/informacao.component";
 import {EnderecoComponent} from "./endereco/endereco.component";
 import {ImagemComponent} from "./imagem/imagem.component";
 import {NzUploadModule} from "ng-zorro-antd/upload";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -39,8 +40,9 @@ import {NzUploadModule} from "ng-zorro-antd/upload";
     NzDatePickerModule,
     NzSelectModule,
     NzTabsModule,
-    NzUploadModule
+    NzUploadModule,
+    FormsModule
   ],
-  exports: [CadastroPacienteComponent]
+  exports: [CadastroPacienteComponent, EnderecoComponent, InformacaoComponent, ImagemComponent]
 })
 export class CadastroPacienteModule { }

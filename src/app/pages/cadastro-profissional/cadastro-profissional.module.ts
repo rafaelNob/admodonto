@@ -16,6 +16,7 @@ import {NzTabsModule} from "ng-zorro-antd/tabs";
 import {NzUploadModule} from "ng-zorro-antd/upload";
 import {CadastroProfissionalComponent} from "./cadastro-profissional.component";
 import {CadastroPacienteRoutingModule} from "./cadastro-profissional-routing.module";
+import {CadastroPacienteModule} from "../cadastro-paciente/cadastro-paciente.module";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {CadastroPacienteRoutingModule} from "./cadastro-profissional-routing.mod
     NzDatePickerModule,
     NzSelectModule,
     NzTabsModule,
-    NzUploadModule
+    NzUploadModule,
+    CadastroPacienteModule
   ],
   exports: [CadastroProfissionalComponent]
 })
