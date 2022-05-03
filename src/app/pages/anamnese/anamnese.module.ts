@@ -18,11 +18,14 @@ import {NzUploadModule} from "ng-zorro-antd/upload";
 import {AnamneseComponent} from "./anamnese.component";
 import {NzRadioModule} from "ng-zorro-antd/radio";
 import {FormsModule} from "@angular/forms";
+import {FichaAvaliacaoOrofacialComponent} from "./ficha-avaliacao-orofacial/ficha-avaliacao-orofacial.component";
+import {NzStatisticModule} from "ng-zorro-antd/statistic";
+import {NzButtonModule} from "ng-zorro-antd/button";
 
 
 
 @NgModule({
-  declarations: [AnamneseComponent],
+  declarations: [AnamneseComponent,FichaAvaliacaoOrofacialComponent],
   imports: [
     CommonModule,
     AnamneseRoutingModule,
@@ -40,8 +43,10 @@ import {FormsModule} from "@angular/forms";
     NzSelectModule,
     NzTabsModule,
     NzRadioModule,
-    FormsModule
+    FormsModule,
+    NzStatisticModule,
+    NzButtonModule
   ],
-  exports: [AnamneseComponent]
+  exports: [AnamneseComponent, FichaAvaliacaoOrofacialComponent]
 })
 export class AnamneseModule { }

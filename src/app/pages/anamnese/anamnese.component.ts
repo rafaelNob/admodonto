@@ -6,12 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./anamnese.component.css']
 })
 export class AnamneseComponent implements OnInit {
-  radioValue:string| undefined
-  inputValue: string | null = null;
-  textValue: string | null = null;
+  isUsuario = true
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  teste(){
+    this.isUsuario = !this.isUsuario
   }
 
 }
