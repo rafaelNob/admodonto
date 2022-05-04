@@ -18,6 +18,7 @@ import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzBackTopModule} from "ng-zorro-antd/back-top";
+import {DataService} from "./calendar/data.service";
 
 
 registerLocaleData(pt);
@@ -41,7 +42,7 @@ registerLocaleData(pt);
     NzButtonModule,
     NzBackTopModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: pt_BR }],
+  providers: [{ provide: NZ_I18N, useValue: pt_BR },DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
