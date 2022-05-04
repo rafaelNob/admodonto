@@ -86,6 +86,16 @@
               </nz-input-group>
             </nz-form-item>
           </div>
+          <div *ngIf="tipoUsuario ==='PACIENTE'" nz-col [nzSpan]="6">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Campo obrigatório">
+                <input
+                  nz-input
+                  placeholder="Nº da carteirinha"
+                />
+              </nz-form-control>
+            </nz-form-item>
+          </div>
           <div *ngIf="tipoUsuario ==='PROFISSIONAL'" nz-col [nzSpan]="6">
             <nz-form-item>
               <nz-form-control nzErrorTip="Campo obrigatório">
