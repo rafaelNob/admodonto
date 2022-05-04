@@ -14,6 +14,9 @@ const routes: Routes = [
   },
   { path: 'anamnese', loadChildren: () => import('./pages/anamnese/anamnese.module')
       .then(m => m.AnamneseModule)
+  },
+  { path: 'calendario', loadChildren: () => import('./pages/calendario/calendario.module')
+      .then(m => m.CalendarioModule)
   }
 ];
 
