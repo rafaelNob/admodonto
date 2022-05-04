@@ -1,9 +1,10 @@
+/*https://api.daypilot.org/daypilot-locale-register/*/
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {
   DayPilot,
   DayPilotCalendarComponent,
   DayPilotMonthComponent,
-  DayPilotNavigatorComponent
+  DayPilotNavigatorComponent,
 } from "@daypilot/daypilot-lite-angular";
 import {DataService} from "../../calendar/data.service";
 
@@ -26,6 +27,7 @@ export class CalendarioComponent implements AfterViewInit {
     showMonths: 3,
     cellWidth: 25,
     cellHeight: 25,
+    locale:'pt-BR',
     onVisibleRangeChanged: args => {
       this.loadEvents();
     }
@@ -42,12 +44,14 @@ export class CalendarioComponent implements AfterViewInit {
   }
 
   configDay: DayPilot.CalendarConfig = {
+    locale: 'pt-BR'
   };
 
   configWeek: DayPilot.CalendarConfig = {
     viewType: "Week",
     onTimeRangeSelected: async (args) => {
-      const modal = await DayPilot.Modal.prompt("Create a new event:", "Event 1");
+      debugger
+      const modal = await DayPilot.Modal.prompt("Criar um novo evento:", "Event 1");
       const dp = args.control;
       dp.clearSelection();
       if (!modal.result) { return; }
@@ -78,6 +82,20 @@ export class CalendarioComponent implements AfterViewInit {
     this.ds.getEvents(from, to).subscribe(result => {
       this.events = result;
     });
+    DayPilot.Locale.register(
+      new DayPilot.Locale('en-us',
+        {
+          dayNames: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+          dayNamesShort: ['Su','Mo','Tu','We','Th','Fr','Sa'],
+          monthNames: ['Janeiro','February','March','April','May','June','July','August','September','October','November','December'],
+          monthNamesShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+          timePattern: 'h:mm tt',
+          datePattern: 'dd/MM/yyyy',
+          dateTimePattern: 'dd/MM/yyyy h:mm tt',
+          timeFormat: 'Clock24Hours',
+          weekStarts: 0
+        }
+      ));
   }
 
   viewDay():void {
@@ -100,6 +118,7 @@ export class CalendarioComponent implements AfterViewInit {
     this.configWeek.visible = false;
     this.configMonth.visible = true;
   }
+
 
 
 }
