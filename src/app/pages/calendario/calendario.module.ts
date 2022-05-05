@@ -3,6 +3,10 @@ import {CommonModule} from '@angular/common';
 import {CadastroPacienteModule} from "../cadastro-paciente/cadastro-paciente.module";
 import {CalendarioComponent} from "./calendario.component";
 import {CalendarioRoutingModule} from "./calendario-routing.module";
+import {FullCalendarModule} from "@fullcalendar/angular";
+import {NzGridModule} from "ng-zorro-antd/grid";
+import {NzPageHeaderModule} from "ng-zorro-antd/page-header";
+import {NzAvatarModule} from "ng-zorro-antd/avatar";
 
 
 @NgModule({
@@ -10,7 +14,11 @@ import {CalendarioRoutingModule} from "./calendario-routing.module";
   imports: [
     CommonModule,
     CalendarioRoutingModule,
-    CadastroPacienteModule
+    CadastroPacienteModule,
+    FullCalendarModule,
+    NzGridModule,
+    NzPageHeaderModule,
+    NzAvatarModule
   ],
   exports: [CalendarioComponent]
 })

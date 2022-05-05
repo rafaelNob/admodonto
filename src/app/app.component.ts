@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isCollapsed = false;
-  gridStyle = {
-    width: '25%',
-    textAlign: 'center'
-  };
 }

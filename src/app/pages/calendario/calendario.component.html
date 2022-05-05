@@ -1,1 +1,22 @@
-<p>calendario works!</p>
+<div style="background: #ffffff; width: 100%;margin-bottom: 15px;">
+  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+    <div nz-col [nzSpan]="24">
+      <div>
+        <nz-page-header>
+          <nz-avatar class="icon-style" nz-page-header-avatar nzIcon="user"></nz-avatar>
+          <nz-page-header-title>AGENDA</nz-page-header-title>
+        </nz-page-header>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="inner-content">
+  <div nz-row [nzGutter]="{ xs: 8, sm: 16, md: 24, lg: 32 }">
+    <div nz-col [nzSpan]="24">
+      <full-calendar
+        [options]='calendarOptions'
+      ></full-calendar>
+    </div>
+  </div>
+</div>
+

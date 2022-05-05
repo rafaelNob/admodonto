@@ -18,8 +18,18 @@ import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzBackTopModule} from "ng-zorro-antd/back-top";
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 
-
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  timeGridPlugin,
+  listPlugin,
+  interactionPlugin
+]);
 registerLocaleData(pt);
 
 @NgModule({
@@ -39,7 +49,8 @@ registerLocaleData(pt);
     NzDescriptionsModule,
     NzGridModule,
     NzButtonModule,
-    NzBackTopModule
+    NzBackTopModule,
+    FullCalendarModule
   ],
   providers: [{ provide: NZ_I18N, useValue: pt_BR }],
   bootstrap: [AppComponent]

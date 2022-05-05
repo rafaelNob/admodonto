@@ -38,4 +38,10 @@
 .margin-l-15{
   margin-left: 15px
 }
+.fc-scrollgrid-sync-inner>a{
+  color: black!important;
+}
+.fc-daygrid-day-number>a{
+  color: black!important;
+}
 
